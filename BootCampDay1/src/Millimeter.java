@@ -19,7 +19,8 @@ public class Millimeter extends Length {
 	
 	public static Millimeter convertToMillimeter(Length length)
 	{
-		return null;
+		Meter m = length.convertToMeterBase();
+		return Millimeter.convertFromMeterBaseToUnit(m);
 	}
 
 	@Override

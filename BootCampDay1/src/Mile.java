@@ -17,7 +17,8 @@ public class Mile extends Length{
 	}
 	
 	public static Mile convertToMile(Length length){
-		return null;
+		Meter m = length.convertToMeterBase();
+		return Mile.convertFromMeterBaseToUnit(m);
 	}
 
 	@Override

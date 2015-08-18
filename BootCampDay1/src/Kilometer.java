@@ -20,7 +20,8 @@ public class Kilometer extends Length{
 	
 	public static Kilometer convertToKilometer(Length length)
 	{
-		return null;
+		Meter m = length.convertToMeterBase();
+		return Kilometer.convertFromBaseMeterToUnit(m);
 	}
 
 	@Override

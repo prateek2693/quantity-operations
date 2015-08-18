@@ -2,6 +2,7 @@
 public class Centimeter extends Length{
 
 	private double centimetervalue;
+	private static final double baseConversionFactor = 0.01d;
 	
 	public Centimeter(double centimetervalue)
 	{
@@ -10,17 +11,17 @@ public class Centimeter extends Length{
 
 	@Override
 	public Meter convertToMeterBase() {
-		return new Meter(centimetervalue/100);
+		return new Meter(centimetervalue * baseConversionFactor);
 	}
 
-	public static Centimeter convertFromMeterBaseToUnit(Meter meter) {
-		return new Centimeter(meter.getMeterValue()*100);		
+	private static Centimeter convertFromMeterBaseToUnit(Meter meter) {
+		return new Centimeter(meter.getMeterValue() / baseConversionFactor);		
 	}
 	
 	public static Centimeter convertToCentimeter(Length length)
 	{
 		Meter m = length.convertToMeterBase();
-		return Centimeter.convertFromMeterBaseToUnit(m);
+		return convertFromMeterBaseToUnit(m);
 	}
 	
 	@Override

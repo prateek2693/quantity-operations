@@ -2,6 +2,7 @@
 public class Meter extends Length{
 
 	private double metervalue;
+	private static final double baseConversionFactor = 1d;
 	
 	public Meter(double metervalue)
 	{
@@ -47,8 +48,16 @@ public class Meter extends Length{
 	{
 		return length.convertToMeterBase();
 	}
-
-	public static Meter convertFromMeterBaseToUnit(Meter meter) {
-		return meter;
+	
+	public Meter addLength(Length length)
+	{
+		Meter meter1 = this.convertToMeterBase();
+		Meter meter2 = length.convertToMeterBase();
+		
+		Meter sum = new Meter(meter1.getMeterValue() + meter2.getMeterValue());
+		
+		return sum;
+		
 	}
+	
 }

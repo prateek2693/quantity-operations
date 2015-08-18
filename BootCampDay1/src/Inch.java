@@ -13,12 +13,23 @@ public class Inch extends Length{
 		return new Meter(inchvalue * 0.0254);
 	}
 	
-	public static Inch convertFromMeterBaseToUnit(Meter meter){
+	private static Inch convertFromMeterBaseToUnit(Meter meter){
 		return new Inch(meter.getMeterValue() / 0.0254);
 	}
 	
 	public static Inch convertToInch(Length length){
-		return null;
+		Meter m = length.convertToMeterBase();
+		return Inch.convertFromMeterBaseToUnit(m);
+	}
+	
+	public Inch addLength(Length length)
+	{
+		Meter meter1 = this.convertToMeterBase();
+		Meter meter2 = length.convertToMeterBase();
+		
+		Meter sum = new Meter(meter1.getMeterValue() + meter2.getMeterValue());
+		
+		return convertToInch(sum);
 	}
 
 	@Override

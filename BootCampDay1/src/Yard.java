@@ -18,9 +18,20 @@ public class Yard extends Length{
 	}
 	
 	public static Yard convertToYard(Length length){
-		return null;
+		Meter m = length.convertToMeterBase();
+		return Yard.convertFromBaseMeterToUnit(m);
 	}
 
+	public Yard addLength(Length length)
+	{
+		Meter meter1 = this.convertToMeterBase();
+		Meter meter2 = length.convertToMeterBase();
+		
+		Meter sum = new Meter(meter1.getMeterValue() + meter2.getMeterValue());
+		
+		return convertToYard(sum);				
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

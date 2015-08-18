@@ -20,7 +20,8 @@ public class Rod extends Length{
 	
 	public static Rod convertToRod(Length length)
 	{
-		return null;
+		Meter m = length.convertToMeterBase();
+		return Rod.convertFromMeterBaseToUnit(m);
 	}
 
 	@Override

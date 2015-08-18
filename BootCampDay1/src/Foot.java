@@ -20,7 +20,8 @@ public class Foot extends Length{
 	
 	public static Foot convertToFoot(Length length)
 	{
-		return null;
+		Meter m = length.convertToMeterBase();
+		return Foot.convertFromMeterBaseToUnit(m);
 	}
 
 	@Override
