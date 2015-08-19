@@ -1,6 +1,8 @@
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+import org.main.length.Inch;
+import org.main.length.Meter;
 
 public class InchTest {
 
@@ -9,7 +11,7 @@ public class InchTest {
 	
 	@Test
 	public void testConvertToBase() {
-		assertEquals(onemeter,inch.convertToMeterBase());
+		assertEquals(onemeter,inch.convertToBase());
 	}
 	
 /*	@Test

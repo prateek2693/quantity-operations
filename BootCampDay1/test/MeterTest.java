@@ -1,6 +1,9 @@
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+import org.main.length.Kilometer;
+import org.main.length.Meter;
+import org.main.length.Rod;
 
 
 public class MeterTest {
@@ -9,7 +12,7 @@ public class MeterTest {
 	
 	@Test
 	public void testConvertToBase(){
-		assertEquals(new Meter(1),onemeter.convertToMeterBase());
+		assertEquals(new Meter(1),onemeter.convertToBase());
 	}
 	
 	@Test
